@@ -1,0 +1,121 @@
+<!--
+/********* Web Technology Development Training **************************************************
+ * Instructor  : Ivan J. Borchardt - linkedin.com/in/ivan-borchardt/
+ *                                 - github.com/Ivan-J-Borchardt
+ * Description : React composition P2
+ * Date        : 01.2021 
+ ************************************************************************************************/
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - Introdução</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            function App(){
+                return(
+                   // <Painel sup={<Contato/>} inf={<Sobre/>}/>
+                    <Painel sup="Bem vindo!!" inf="Obrigado por visitar nosso Parque!"/>
+                );
+            }
+
+            function Painel(props){
+                return(
+                    <div id='painel'>
+                        <div id='painel-superior'>
+                            {props.sup}
+                        </div>
+                        
+                        <div id='painel-inferior'>
+                            {props.inf}
+                        </div>
+                    </div>
+                );
+
+            }
+
+            function Contato(){
+                return(
+                    <div id='contato'>
+                        <form action="">
+                            <p>Deixe seu nome e E-mail e entraremos em contato</p>
+                            <label htmlFor="idNome">Nome: </label>
+                            <input type="text" id='idNome'/>
+                            <br/>
+                            <label htmlFor="idEmail">E-mail: </label>
+                            <input type="text" id='idEmail'/>
+                            <br/>
+                            <input type="button" value="Enviar"/>
+                        </form>
+                    </div>
+                );
+            }
+
+            function Sobre(){
+                return(
+                    <div id='sobre'>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                           Atque quae officiis dolorum dolores tempora cupiditate facere
+                           beatae? Dolor, doloribus pariatur. Exercitationem consequatur
+                           quasi deleniti fuga atque eaque totam quisquam voluptatem?
+                        </p>
+                    </div>
+                );
+            }
+
+
+            //Renderiza os componentes
+            ReactDOM.render(
+                <App />, 
+                document.getElementById('app')        
+            );
+
+ 
+            /*
+                Algumas regras para uso do JSX: 
+                   - o nome dos componentes precisa iniciar com letra maiuscula
+                   - "tags html" devem estar em letra minuscula 
+                   - todas as tags precisam de fechamento 
+                           <tag></tag>
+                               ou 
+                           <tag1/>
+                   - um componente só consegue retornar 1 container, dessa forma 
+                     componentes compostos de mais de um elemento html devem sempre estar 
+                     dentro de um container (uma <div>, por exemplo)
+            */
+        </script>
+
+    </body>
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+-->

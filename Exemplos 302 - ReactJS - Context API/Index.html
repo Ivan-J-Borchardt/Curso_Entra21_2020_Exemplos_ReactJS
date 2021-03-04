@@ -1,0 +1,118 @@
+<!--
+/********* Web Technology Development Training **************************************************
+ * Instructor  : Ivan J. Borchardt - linkedin.com/in/ivan-borchardt/
+ *                                 - github.com/Ivan-J-Borchardt
+ * Description : React Context API
+ * Date        : 01.2021 
+ ************************************************************************************************/
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - Introdução</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        
+        <script>
+            //Contexto 
+            const nomeContext = React.createContext('nome'); 
+
+            function componente(){
+           
+                const nomeAluno = "João Martinho"
+                return(
+                    React.createElement(nomeContext.Provider, {value: nomeAluno}, 
+                        React.createElement('div', {className: 'componente'},
+                            React.createElement(componente1)
+                        )
+                    )
+
+                );
+            }
+
+            function componente1(){
+                
+                return(
+                    React.createElement('div', {className: 'componente1'},
+                        React.createElement(componente2)
+                    )
+                );
+            }
+
+           
+            function componente2(){
+              
+                return(
+                    React.createElement('div', {className: 'componente2'},
+                        React.createElement(componente3)
+                    )
+                );
+            }
+
+
+            function componente3(){
+                
+                return(
+                    React.createElement('div', {className: 'componente3'},
+                        React.createElement(componente4)
+                    )
+                );
+            }            
+
+            function componente4(){
+
+                return(
+                    React.createElement(nomeContext.Consumer, null,
+                        function(nome){
+                           return React.createElement('div', null, nome)
+                        }
+                    )
+
+                ) 
+            }
+
+
+
+
+
+            //Renderiza os componentes
+            ReactDOM.render(
+                React.createElement(componente), 
+                document.getElementById('app')        
+            );
+        </script>
+
+    </body>
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+
+        
+    
+        
+
+-->

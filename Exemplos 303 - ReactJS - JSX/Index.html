@@ -1,0 +1,146 @@
+<!--
+/********* Web Technology Development Training **************************************************
+ * Instructor  : Ivan J. Borchardt - linkedin.com/in/ivan-borchardt/
+ *                                 - github.com/Ivan-J-Borchardt
+ * Description : React JSX
+ * Date        : 01.2021 
+ ************************************************************************************************/
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - Introdução</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <script type="text/babel">
+            //Contexto 
+            const nomeContext = React.createContext('nome'); 
+
+            function Componente(){
+           
+                const nomeAluno = "João Martinho"
+
+                return(
+                    <nomeContext.Provider value={nomeAluno}>
+                        <div className="componente">
+                            <Componente1/>
+                        </div>
+                    </nomeContext.Provider>
+                );                
+                
+            }
+
+            function Componente1(){
+                return(
+                    <div className = 'componente1'>
+                        <Componente2/>
+                    </div>
+                );  
+            }
+
+           
+            function Componente2(){
+                return(
+                    <div className = 'componente2'>
+                        <Componente3/>
+                    </div>
+                );
+            }
+
+
+            function Componente3(){
+                return(
+                    <div className = 'componente3'>
+                        <Componente4/>
+                    </div>
+                );
+            }            
+
+            function Componente4(){ 
+
+                return(
+                    <nomeContext.Consumer>
+                        {(nome) => (
+                            <div className="componente4">
+                                <p>{nome}</p>
+                            </div>
+                        )}
+                    </nomeContext.Consumer>    
+                );
+
+            }
+
+            //Exemplo com evento... 
+            function Componente5(){
+                return(
+                    <div>
+                        <h1>Qual é Seu Nome?</h1>
+                        <form method='POST'>
+                            <input type='text' placeholder = 'Informe seu Nome' id='idNome'/>
+                            <button type="button//" onClick={exibir}>Enviar</button>    
+                        </form>    
+                    </div>
+                );
+            }
+
+            //Renderiza os componentes
+            ReactDOM.render(
+                <Componente5 />, 
+                document.getElementById('app')        
+            );
+
+            function exibir(){
+                console.log(document.getElementById("idNome").value);
+            }
+            /*
+                Algumas regras para uso do JSX: 
+                   - o nome dos componentes precisa iniciar com letra maiuscula
+                   - "tags html" devem estar em letra minuscula 
+                   - todas as tags precisam de fechamento 
+                           <tag></tag>
+                               ou 
+                           <tag1/>
+                   - um componente só consegue retornar 1 container, dessa forma 
+                     componentes compostos de mais de um elemento html devem sempre estar 
+                     dentro de um container (uma <div>, por exemplo)
+            */
+        </script>
+
+
+
+    </body>
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+
+        
+    
+        
+
+-->

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - Introdução</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            function App(){
+                const [contador, incrementaCont] = React.useState(parseInt0(localStorage.getItem('contador')) ||0);
+
+                const clickIncrementa = function(){
+                    incrementaCont(contador + 1)
+                }
+
+                return(
+                    <React.Fragment>
+                        <ComponenteA onClickInc={clickIncrementa}/>
+                        <ComponenteB cont={contador}/>
+                    </React.Fragment>
+                    
+                );
+            }
+
+            function ComponenteA(props){
+                return(
+                    <div>
+                        <ComponenteA1 onClickInc={props.onClickInc}/>
+                    </div>
+                );
+
+            }
+
+            function ComponenteA1(props){
+                return(
+                    <div>
+                        <ComponenteA2 onClickInc={props.onClickInc}/>
+                    </div>
+                );
+
+            }
+
+            function ComponenteA2(props){
+                return(
+                    <div>
+                        <button type="button" onClick={props.onClickInc}>Incrementar</button>
+                    </div>
+                );
+            }
+
+
+            function ComponenteB(props){
+                return(
+                    <div>
+                        <ComponenteB1 cont={props.cont}/>
+                    </div>
+                );
+
+            }
+
+            function ComponenteB1(props){
+                return(
+                    <div>
+                        <ComponenteB2 cont={props.cont}/>
+                    </div>
+                );
+
+            }
+
+            function ComponenteB2(props){
+
+                React.useEffect(function(){
+                    //console.log('criou/alterou'); 
+                    localStorage.setItem('contador', props.cont); 
+                }); 
+
+                return(
+                    <div>
+                        <p>Contador: {props.cont}</p>
+                    </div>
+                );
+            }
+
+            //Renderiza os componentes
+            ReactDOM.render(
+                <App />, 
+                document.getElementById('app')        
+            );
+
+ 
+            /*
+                Algumas regras para uso do JSX: 
+                   - o nome dos componentes precisa iniciar com letra maiuscula
+                   - "tags html" devem estar em letra minuscula 
+                   - todas as tags precisam de fechamento 
+                           <tag></tag>
+                               ou 
+                           <tag1/>
+                   - um componente só consegue retornar 1 container, dessa forma 
+                     componentes compostos de mais de um elemento html devem sempre estar 
+                     dentro de um container (uma <div>, por exemplo)
+            */
+        </script>
+
+    </body>
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+-->

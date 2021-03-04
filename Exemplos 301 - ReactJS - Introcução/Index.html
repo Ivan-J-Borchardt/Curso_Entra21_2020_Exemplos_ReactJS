@@ -1,0 +1,133 @@
+<!--
+/********* Web Technology Development Training **************************************************
+ * Instructor  : Ivan J. Borchardt - linkedin.com/in/ivan-borchardt/
+ *                                 - github.com/Ivan-J-Borchardt
+ * Description : React - Introduction 
+ * Date        : 01.2021 
+ ************************************************************************************************/
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React - Introdução</title>
+    </head>
+    <body>
+        <!-- 3. Definir o local onde os componentes serão carregados no HTML-->
+        <div id="app"></div>
+
+        <!-- 1. Referenciar o React e o React-DOM -->
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        
+        <script>
+            //2. Criar os componentes da aplicação 
+            function componente(){
+                //return React.createElement(componente2);
+                const nomeAluno = "João Martinho"
+                return(
+                    React.createElement('div', {className: 'componente'},
+                        React.createElement(componente1, {nome: nomeAluno, idade: 23})
+                    )
+                );
+            }
+
+            //Encadeamento de componentes
+            function componente1(props){
+                //return React.createElement(componente2);
+                return(
+                    React.createElement('div', {className: 'componente1'},
+                        React.createElement(componente2, props)
+                    )
+                );
+            }
+
+            //Encadeamento de componentes
+            function componente2(props){
+                //return React.createElement(componente3);
+                return(
+                    React.createElement('div', {className: 'componente2'},
+                        React.createElement(componente3, props)
+                    )
+                );
+            }
+
+            //Encadeamento de componentes
+            function componente3(props){
+                //return React.createElement(componente4);
+                
+                return(
+                    React.createElement('div', {className: 'componente3'},
+                        React.createElement(componente4, props)
+                    )
+                );
+            }            
+
+            function componente4(props){
+                //return React.createElement('div', null, 'Olá Mundo');
+                return React.createElement('div', null, props.nome);
+            }
+
+
+            function Componente5(){
+                return ( 
+                    React.createElement('div', null,
+                        React.createElement('h1', null, "Qual é seu nome?"), 
+                        React.createElement('form', {method: 'POST'},
+                            React.createElement('input', {placeholder: 'Digite seu nome...'}), 
+                            React.createElement('button', {type: 'button'}, 'Enviar'), 
+                            React.createElement('div', null, 
+                                React.createElement('input', {type: "radio", name: "sexo", value: "Masculino"}),
+                                React.createElement('label', null, "Masculino"),
+                                React.createElement('br'),
+                                React.createElement('input', {id:"inMasc", type: "radio", name: "sexo", value: "Feminino"}),
+                                React.createElement('label', {htmlFor:"inMasc"}, "Feminino"),
+                            )
+                        ),
+                    )
+                );
+            }
+
+
+            //4. Renderizar os componentes
+
+            ReactDOM.render(
+                React.createElement(Componente5), 
+                document.getElementById('app')        
+            );
+
+            function log(){
+                console.log("Botão Clicado!!!");
+            }
+
+        </script>
+
+    </body>
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+
+        
+    
+        
+
+-->

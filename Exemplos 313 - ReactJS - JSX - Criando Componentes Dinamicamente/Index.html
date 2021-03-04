@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React - Introdução</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        /*
+        var App = React.createClass({
+            render: function () {
+                var listaDeComponentes = [
+                    <ItemLista nome="Joao Pessoa" />,
+                    <ItemLista nome="Mariana Pinho" />
+                ];
+
+                return (
+                    <div>
+                        <h1>Olá Mundo...</h1>
+                        {listaDeComponentes}
+                    </div>
+
+                );
+
+            }
+        });
+        */
+
+        var App = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <h1>App main component! </h1>
+                </div>
+            );
+        }
+    });        
+
+        function ItemLista(props){
+            return(
+                <div>
+                    <p>{props.nome}</p>
+                </div>
+            );
+        }
+
+
+            //Renderiza os componentes
+        ReactDOM.render(
+            <App />,
+            document.getElementById('app')
+        );
+
+
+    </script>
+
+</body>
+
+</html>
+
+<!--  
+    Site Oficial: 
+        https://pt-br.reactjs.org/
+
+    Tutoriais: 
+        Programador a Bordo: 
+           https://www.youtube.com/watch?v=Ws9WVHhNq5M
+       
+        Cod3r: 
+           https://www.youtube.com/watch?v=XQxitgyZ_S4&t=139s
+
+        Código Fonte TV: 
+            https://www.youtube.com/watch?v=NhUr8cwDiiM
+
+        Programador BR: 
+            https://www.youtube.com/watch?v=tbLziJchz48&t=188s
+
+        W3Schools: 
+            https://www.w3schools.com/react/default.asp
+-->

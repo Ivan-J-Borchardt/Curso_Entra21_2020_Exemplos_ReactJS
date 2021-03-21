@@ -1,33 +1,45 @@
 [English](./README.md) | [Português](./README-pt_BR.md) | Deutsch
-# VanillaJS Beispiele 
-Eine Sammlung kurzer und didaktischer  JavaScript/Node-Code Beispiele, die für die Node-Klassen des Entra21-Projekts entwickelt wurden. 
+# ReactJS Beispiele 
+Eine Sammlung kurzer und didaktischer  JavaScript/ReactJs-Code Beispiele, die für die React-Klassen des Entra21-Projekts entwickelt wurden. 
 
 ![Badge](https://img.shields.io/badge/Projekt-Entra21-blue)
 ![Badge](https://img.shields.io/badge/Kurs-JavaScript/ReactJs-blue)
 ![Badge](https://img.shields.io/badge/Jahr-2020-blue)
-![GitHub](https://img.shields.io/github/license/ivan-j-borchardt/ExemplosCursoVanillaJS)
+![GitHub](https://img.shields.io/github/license/ivan-j-borchardt/ExemplosCursoReactJS)
 
 ### Abhängigkeiten
+- [ReactJs](https://reactjs.org/)
 - [NODE](https://nodejs.org/en/download/) 
 - Um die Codes zu bearbeiten kann es nützlich sein eine IDE zu verwenden. Wir empfehlen [VSCode](https://code.visualstudio.com/download).
+
 
 ### Beispiele ausführen
 
 Jedes Beispiel in diesem Repository ist ein vollständiges Projekt.
 
-# Klonen Sie dieses Repository
-$ git clone <https://github.com/Ivan-J-Borchardt/ExemplosCursoNode>
+#### Klonen Sie dieses Repository    
 
-# Greifen Sie im Terminal / cmd auf den Ordner jedes Projekts zu
+$ git clone <https://github.com/Ivan-J-Borchardt/ExemplosCursoNode>
+#### Greifen Sie im Terminal / cmd auf den Ordner jedes Projekts zu
 $ cd <Nome_do_Projeto>
 
-# Installieren Sie die Abhängigkeiten
+#### Installieren Sie die Abhängigkeiten
 $ npm install
 
-# Führen Sie die Anwendung aus
-$ node <Dateinamen.js>
+#### Greifen Sie im Terminal / cmd auf den React Ordner zu
+$ cd my-app
 
-# Der Server startet an Port: 3000 - gehen Sie zu <http://localhost:3000>
+#### Installieren Sie die Abhängigkeiten
+$ npm install
+
+#### Return to the root folder of the project 
+$ cd..
+
+
+#### Führen Sie die Anwendung aus
+$ npm run dev
+
+#### Der Server startet an Port: 3000 - gehen Sie zu <http://localhost:3000>
 
 
 ### Technologie
@@ -35,6 +47,7 @@ $ node <Dateinamen.js>
 - CSS
 - JavaScript 
 - [NODE](https://nodejs.org/en/download/) 
+- [ReactJs](https://reactjs.org/)
 
 ### Autor
 Ivan J. Borchardt

@@ -2,7 +2,7 @@
 
 ---
 
-# Exemplos REactJS 
+# Exemplos ReactJS 
 Coletânea de exemplos curtos e didáticos de código JavaScript/React desenvolvidos para as aulas de React do projeto Entra21. 
 
 
